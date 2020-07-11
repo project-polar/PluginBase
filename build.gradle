@@ -8,8 +8,8 @@ version '1.0-SNAPSHOT'
 shadowJar {
     zip64 true
     manifest {
-        attributes 'Main-Class': 'cc.sfclub.mirai.AdapterMain'
-        attributes 'Plugin-Name': 'MiraiAdapter'
+        attributes 'Main-Class': 'cc.sfclub.example.Main'
+        attributes 'Plugin-Name': 'Example'
         attributes 'Plugin-Ver': '0.0.1'
     }
 }
