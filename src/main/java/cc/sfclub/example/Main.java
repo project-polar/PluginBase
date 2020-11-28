@@ -1,5 +1,8 @@
 package cc.sfclub.example;
 
+import cc.sfclub.catcode.entities.At;
+import cc.sfclub.catcode.entities.Image;
+import cc.sfclub.catcode.entities.Plain;
 import cc.sfclub.command.Source;
 import cc.sfclub.core.Core;
 import cc.sfclub.events.Event;
@@ -95,10 +98,8 @@ public class Main extends Plugin {
         // 更新
         // 更新用户有两种方法
         User u = new User();
-        //1. update
+        //update / save
         um.update(u); //注意：User的无参构造器标注了 @Internal 注解，带有该注解的所有方法和字段产生的问题自负。
-        //2. save
-        u.save();
         // 权限判断
         u.hasPermission(Perm.of("xxx")); //判断是否带有XXX权限..
         u.getUniqueID();// 获取UUID
@@ -127,9 +128,16 @@ public class Main extends Plugin {
         //8. Bot
         Core.get().bot("transformer name"); //获取一个Bot
         // 更多Bot相关，请参考MiraiAdapter( https://github.com/project-polar/MiraiAdapter ).
+
+        //9. 猫码
+        //猫码就是特殊消息，每一种猫码都具有对应的class和Builder.
+        Image.builder();
+        At.builder();
+        Plain.builder();
+
     }
 
-    // 在此处存放插件被加载时的初始化逻辑，onEnable优先于onServerStart.
+    // 在此处存放插件被加载时的初始化逻辑，onEnable优先于onServerStart。
     @Override
     public void onEnable() {
 
